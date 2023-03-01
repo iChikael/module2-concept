@@ -10,21 +10,9 @@ public class Main {
         ProductService test = new ProductService();
         Menu menu= new Menu();
 
-//        productView.showProduct();
-//        productView.add();
-//        productView.showProduct();
-//        System.out.println("");
-//        productView.sortASC();
-//        productView.sortDESC();
-//        productView.findProductbyName();
-//        productView.updateProduct();
-//        productView.showProduct();
-//        paymentView.buy();
-//        System.out.println(test.existProduct(5));
-//        paymentView.option();
+
         menu.chon();
-//        paymentView.showAllIncome();
-//        productView.showProductDescription();
+
 
     }
 }
