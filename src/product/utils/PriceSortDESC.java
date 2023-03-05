@@ -1,4 +1,4 @@
-package product.services;
+package product.utils;
 
 
 import product.model.Product;

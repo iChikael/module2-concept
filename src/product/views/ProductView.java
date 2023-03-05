@@ -3,18 +3,15 @@ package product.views;
 import product.model.PType;
 import product.model.Product;
 import product.model.Status;
-import product.services.PriceSortASC;
-import product.services.PriceSortDESC;
+import product.utils.PriceSortASC;
+import product.utils.PriceSortDESC;
 import product.services.ProductService;
-
-import java.lang.reflect.Method;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class ProductView {
-    DecimalFormat format = new DecimalFormat("###,###,###"+ " đ");
+    DecimalFormat format = new DecimalFormat("###,###,###" + " đ");
     Scanner scanner = new Scanner(System.in);
     Menu menu = new Menu();
     ProductService productService = new ProductService();
@@ -33,7 +30,7 @@ public class ProductView {
             try {
                 id = input.nextInt();
                 if (id > 0) {
-                    if (productService.existProduct(id)){
+                    if (productService.existProduct(id)) {
                         System.out.println(" ❌ ID này đã tồn tại ❌");
                     } else {
                         break;
@@ -101,13 +98,13 @@ public class ProductView {
             System.out.println("Nhập tên sản phẩm: ");
             System.out.print("\t➺ ");
             String check = scanner.nextLine();
-                if (productService.existProductName(check)) {
-                    System.out.println(" ❌ Tên này đã tồn tại xin nhập tên khác ❌");
-                } else {
-                    name = check;
-                    break;
-                }
+            if (productService.existProductName(check)) {
+                System.out.println(" ❌ Tên này đã tồn tại xin nhập tên khác ❌");
+            } else {
+                name = check;
+                break;
             }
+        }
         int quantity;
         while (true) {
             System.out.println("Nhập số lượng sản phẩm: ");
@@ -147,51 +144,57 @@ public class ProductView {
         Product product = new Product(id, type, name, quantity, price, description, status);
         productService.add(product);
         System.out.println("✔ Bạn đã thêm sản phẩm thành công ✔\n");
-        System.out.println("\t\t\t\t=========================================================================================================================");
+        System.out.println("\t\t\t\t=========================================================================================================================\n\n");
         menu.boss();
     }
 
     public void showProductBoss() {
         List<Product> products = productService.getProducts();
-        System.out.println("Danh sách sản phẩm");
-        System.out.printf("\t\t\t\t%-10s %-25s %-30s %-15s %-25s %-25s\n", "ID", "Loại sản phẩm", "Tên sản phẩm", "số lượng", "giá", "trạng thái");
+        System.out.println("Danh sách sản phẩm : ");
+        System.out.println("\t\t\t\t=========================================================================================================================");
+        System.out.printf("\t\t\t\t%-10s %-25s %-30s %-15s %-25s %-25s\n", "ID", "Loại sản phẩm", "Tên sản phẩm", "Số lượng", "Giá", "Trạng thái");
         for (Product product : products) {
             System.out.printf("\t\t\t\t%-10d %-25s %-30s %-15d %-25s %-25s\n", product.getId(), product.getType(), product.getName(), product.getQuantity(), format.format(product.getPrice()), product.getStatus());
         }
-        System.out.println("\t\t\t\t=========================================================================================================================");
+        System.out.println("\t\t\t\t=========================================================================================================================\n\n");
         menu.boss();
     }
 
+
     public void showProductGuest() {
+
         List<Product> products = productService.getProducts();
         System.out.println("Danh sách sản phẩm");
-        System.out.printf("\t\t\t\t%-10s %-25s %-30s %-15s %-25s %-25s\n", "ID", "Loại sản phẩm", "Tên sản phẩm", "số lượng", "giá", "trạng thái");
+        System.out.println("\t\t\t\t=========================================================================================================================");
+        System.out.printf("\t\t\t\t%-10s %-25s %-30s %-15s %-25s %-25s\n", "ID", "Loại sản phẩm", "Tên sản phẩm", "Số lượng", "Giá", "Trạng thái");
         for (Product product : products) {
             System.out.printf("\t\t\t\t%-10d %-25s %-30s %-15d %-25s %-25s\n", product.getId(), product.getType(), product.getName(), product.getQuantity(), format.format(product.getPrice()), product.getStatus());
         }
-        System.out.println("\t\t\t\t=========================================================================================================================");
+        System.out.println("\t\t\t\t=========================================================================================================================\n\n");
         menu.guest();
     }
 
     public void showProductDescriptionBoss() {
         List<Product> products = productService.getProducts();
         System.out.println("Mô tả sản phẩm");
+        System.out.println("\t\t\t\t=========================================================================================================================");
         System.out.printf("\t\t\t\t%-10s %-25s %-30s %-50s\n", "ID", "Loại sản phẩm", "Tên sản phẩm", "Mô tả");
         for (Product product : products) {
             System.out.printf("\t\t\t\t%-10s %-25s %-30s %-50s\n", product.getId(), product.getType(), product.getName(), product.getDescription());
         }
-        System.out.println("\t\t\t\t=========================================================================================================================");
+        System.out.println("\t\t\t\t=========================================================================================================================\n\n");
         menu.boss();
     }
 
     public void showProductDescriptionGuest() {
         List<Product> products = productService.getProducts();
         System.out.println("Mô tả sản phẩm");
+        System.out.println("\t\t\t\t=========================================================================================================================");
         System.out.printf("\t\t\t\t%-10s %-25s %-30s %-50s\n", "ID", "Loại sản phẩm", "Tên sản phẩm", "Mô tả");
         for (Product product : products) {
             System.out.printf("\t\t\t\t%-10s %-25s %-30s %-50s\n", product.getId(), product.getType(), product.getName(), product.getDescription());
         }
-        System.out.println("\t\t\t\t=========================================================================================================================");
+        System.out.println("\t\t\t\t=========================================================================================================================\n\n");
         menu.guest();
     }
 
@@ -199,11 +202,12 @@ public class ProductView {
         List<Product> p = productService.getProducts();
         p.sort(new PriceSortASC());
         System.out.println("Danh sách sản phẩm");
-        System.out.printf("\t\t\t\t%-10s %-25s %-30s %-15s %-25s %-25s\n", "ID", "Loại sản phẩm", "Tên sản phẩm", "số lượng", "giá", "trạng thái");
+        System.out.println("\t\t\t\t=========================================================================================================================");
+        System.out.printf("\t\t\t\t%-10s %-25s %-30s %-15s %-25s %-25s\n", "ID", "Loại sản phẩm", "Tên sản phẩm", "Số lượng", "Giá", "Trạng thái");
         for (Product product : p) {
             System.out.printf("\t\t\t\t%-10d %-25s %-30s %-15d %-25s %-25s\n", product.getId(), product.getType(), product.getName(), product.getQuantity(), format.format(product.getPrice()), product.getStatus());
         }
-        System.out.println("\t\t\t\t=========================================================================================================================");
+        System.out.println("\t\t\t\t=========================================================================================================================\n\n");
         menu.guest();
     }
 
@@ -211,23 +215,55 @@ public class ProductView {
         List<Product> p = productService.getProducts();
         p.sort(new PriceSortDESC());
         System.out.println("Danh sách sản phẩm");
+        System.out.println("\t\t\t\t=========================================================================================================================");
         System.out.printf("\t\t\t\t%-10s %-25s %-30s %-15s %-25s %-25s\n", "ID", "Loại sản phẩm", "Tên sản phẩm", "số lượng", "giá", "trạng thái");
         for (Product product : p) {
             System.out.printf("\t\t\t\t%-10d %-25s %-30s %-15d %-25s %-25s\n", product.getId(), product.getType(), product.getName(), product.getQuantity(), format.format(product.getPrice()), product.getStatus());
         }
-        System.out.println("\t\t\t\t=========================================================================================================================");
+        System.out.println("\t\t\t\t=========================================================================================================================\n\n");
         menu.guest();
     }
+
 
     public void findProductbyTypeGuest() {
-        System.out.print("Nhập loại sản phẩm cần tìm: ");
-        String type = scanner.nextLine().toUpperCase();
+        System.out.println("= = = = = = = = = = = = = ");
+        System.out.println("∥  1. SKINCARE         ∥");
+        System.out.println("∥  2. BODYCARE         ∥");
+        System.out.println("∥  3. HAIRCARE         ∥");
+        System.out.println("∥  4. LIPCARE          ∥");
+        System.out.println("∥  5. FUNCTIONALFOODS  ∥");
+        System.out.println("= = = = = = = = = = = = = ");
+        System.out.print("Nhập số tương ứng với loại sản phẩm cần tìm (1-5): ");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+        String type;
+        switch (choice) {
+            case 1:
+                type = "SKINCARE";
+                break;
+            case 2:
+                type = "BODYCARE";
+                break;
+            case 3:
+                type = "HAIRCARE";
+                break;
+            case 4:
+                type = "LIPCARE";
+                break;
+            case 5:
+                type = "FUNCTIONALFOODS";
+                break;
+            default:
+                System.out.println("Lựa chọn không hợp lệ!");
+                return;
+        }
         boolean found = false;
-        List<Product> p = productService.getProducts();
+        List<Product> products = productService.getProducts();
         System.out.println("Danh sách sản phẩm");
-        System.out.printf("\t\t\t\t%-10s %-25s %-30s %-15s %-25s %-25s\n", "ID", "Loại sản phẩm", "Tên sản phẩm", "số lượng", "giá", "trạng thái");
-        for (Product product : p) {
-            if (String.valueOf(product.getType()).equals(type)) {
+        System.out.println("\t\t\t\t=========================================================================================================================");
+        System.out.printf("\t\t\t\t%-10s %-25s %-30s %-15s %-25s %-25s\n", "ID", "Loại sản phẩm", "Tên sản phẩm", "Số lượng", "Giá", "Trạng thái");
+        for (Product product : products) {
+            if (product.getType().equalsIgnoreCase(type)) {
                 System.out.printf("\t\t\t\t%-10d %-25s %-30s %-15d %-25s %-25s\n", product.getId(), product.getType(), product.getName(), product.getQuantity(), format.format(product.getPrice()), product.getStatus());
                 found = true;
             }
@@ -235,19 +271,50 @@ public class ProductView {
         if (!found) {
             System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t ✖ Không có sản phẩm này ✖");
         }
-        System.out.println("\t\t\t\t=========================================================================================================================");
+        System.out.println("\t\t\t\t=========================================================================================================================\n\n");
         menu.guest();
     }
 
+
     public void findProductbyTypeBoss() {
-        System.out.print("Nhập loại sản phẩm cần tìm: ");
-        String type = scanner.nextLine().toUpperCase();
+        System.out.println("= = = = = = = = = = = = = ");
+        System.out.println("∥  1. SKINCARE         ∥");
+        System.out.println("∥  2. BODYCARE         ∥");
+        System.out.println("∥  3. HAIRCARE         ∥");
+        System.out.println("∥  4. LIPCARE          ∥");
+        System.out.println("∥  5. FUNCTIONALFOODS  ∥");
+        System.out.println("= = = = = = = = = = = = = ");
+        System.out.print("Nhập số tương ứng với loại sản phẩm cần tìm (1-5): ");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+        String type;
+        switch (choice) {
+            case 1:
+                type = "SKINCARE";
+                break;
+            case 2:
+                type = "BODYCARE";
+                break;
+            case 3:
+                type = "HAIRCARE";
+                break;
+            case 4:
+                type = "LIPCARE";
+                break;
+            case 5:
+                type = "FUNCTIONALFOODS";
+                break;
+            default:
+                System.out.println("Lựa chọn không hợp lệ!");
+                return;
+        }
         boolean found = false;
-        List<Product> p = productService.getProducts();
+        List<Product> products = productService.getProducts();
         System.out.println("Danh sách sản phẩm");
-        System.out.printf("\t\t\t\t%-10s %-25s %-30s %-15s %-25s %-25s\n", "ID", "Loại sản phẩm", "Tên sản phẩm", "số lượng", "giá", "trạng thái");
-        for (Product product : p) {
-            if (String.valueOf(product.getType()).equals(type)) {
+        System.out.println("\t\t\t\t=========================================================================================================================");
+        System.out.printf("\t\t\t\t%-10s %-25s %-30s %-15s %-25s %-25s\n", "ID", "Loại sản phẩm", "Tên sản phẩm", "Số lượng", "Giá", "Trạng thái");
+        for (Product product : products) {
+            if (product.getType().equalsIgnoreCase(type)) {
                 System.out.printf("\t\t\t\t%-10d %-25s %-30s %-15d %-25s %-25s\n", product.getId(), product.getType(), product.getName(), product.getQuantity(), format.format(product.getPrice()), product.getStatus());
                 found = true;
             }
@@ -255,7 +322,7 @@ public class ProductView {
         if (!found) {
             System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t ✖ Không có sản phẩm này ✖");
         }
-        System.out.println("\t\t\t\t=========================================================================================================================");
+        System.out.println("\t\t\t\t=========================================================================================================================\n\n");
         menu.boss();
     }
 
@@ -285,9 +352,10 @@ public class ProductView {
         boolean found = false;
         List<Product> p = productService.getProducts();
         System.out.println("Danh sách sản phẩm");
-        System.out.printf("\t\t\t\t%-10s %-25s %-30s %-15s %-25s %-25s\n", "ID", "Loại sản phẩm", "Tên sản phẩm", "số lượng", "giá", "trạng thái");
+        System.out.printf("\t\t\t\t%-10s %-25s %-30s %-15s %-25s %-25s\n", "ID", "Loại sản phẩm", "Tên sản phẩm", "Số lượng", "Giá", "Trạng thái");
         for (Product product : p) {
             if (product.getName().toUpperCase().contains(name)) {
+                System.out.println("\t\t\t\t=========================================================================================================================\n");
                 System.out.printf("\t\t\t\t%-10d %-25s %-30s %-15d %-25s %-25s\n", product.getId(), product.getType(), product.getName(), product.getQuantity(), format.format(product.getPrice()), product.getStatus());
                 found = true;
             }
@@ -295,7 +363,7 @@ public class ProductView {
         if (!found) {
             System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t ✖ Không có sản phẩm này ✖");
         }
-        System.out.println("\t\t\t\t=========================================================================================================================");
+        System.out.println("\t\t\t\t=========================================================================================================================\n");
         menu.guest();
     }
 
@@ -438,7 +506,7 @@ public class ProductView {
                     System.out.println("Nhập không đúng! Vui lòng nhập lại");
                     setPType(product);
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("\t ❌ Lựa chọn phải là 1 số ❌");
             System.out.println("\t=========================");
             setPType(product);
@@ -470,7 +538,7 @@ public class ProductView {
                     setStatus(product);
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("\t ❌ Lựa chọn phải là 1 số ❌");
             System.out.println("\t=========================");
             setStatus(product);

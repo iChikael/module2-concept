@@ -1,8 +1,6 @@
 package product.services;
 
-import product.model.Cart;
 import product.model.Payment;
-import product.model.Product;
 import product.utils.CSVUtils;
 
 import java.util.ArrayList;
@@ -42,16 +40,7 @@ public class PaymentService extends ProductService implements IPaymentService {
         }
     }
 
-    public Payment findPaymentID(int id){
-        getPayment();
-        for (Payment payment : paymentList) {
-            if (payment.getId() == id){
-                return payment;
-            }
-        }
-        System.out.println("\t\t\t\tKhông có sản phẩm này");
-        return null;
-    }
+
 
     public long showTotal (){
         getPayment();

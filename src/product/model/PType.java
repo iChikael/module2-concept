@@ -30,4 +30,9 @@ public enum PType {
     public String contains(String type) {
         return type;
     }
+    public boolean equalsIgnoreCase(String other) {
+        return this.toString().equalsIgnoreCase(other);
+    }
+
+
 }

@@ -2,7 +2,6 @@ package product.services;
 
 import product.model.Product;
 
-import java.nio.file.Path;
 import java.util.List;
 
 public interface IProductService {
