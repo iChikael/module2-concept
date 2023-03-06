@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static product.views.Menu.productView;
+
 public class PaymentView {
     DecimalFormat format = new DecimalFormat("###,###,###" + " đ");
     Scanner scanner = new Scanner(System.in);
@@ -43,6 +45,7 @@ public class PaymentView {
 
     public void buy() {
         while (true) {
+
             System.out.println("Nhập ID sản phẩm cần mua");
             System.out.print("\t➺ ");
             try {

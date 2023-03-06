@@ -5,29 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="076bbdf2-c76c-44a3-abd9-29c03c505167" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/product/views/Loginview.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/caseStudyModule2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/module2-concept.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/cart.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/login.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2-concept/data/product.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2-concept/data/product.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2-concept/product/services/PaymentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2-concept/product/services/PaymentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2-concept/product/services/PriceSortASC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2-concept/product/services/PriceSortDESC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2-concept/product/utils/ValidateUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2-concept/product/utils/ValidateUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2-concept/product/views/PaymentView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2-concept/product/views/PaymentView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module2-concept/product/views/ProductView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module2-concept/product/views/ProductView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/payment.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/payment.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/product.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/product.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/product/model/Cart.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/product/model/Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/product/model/PType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/product/model/PType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/product/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/product/model/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/product/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/product/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/product/services/CartService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/product/services/ICartService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/product/services/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/product/services/IProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/product/services/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/product/services/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/product/services/PriceSortASC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/product/utils/PriceSortASC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/product/services/PriceSortDESC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/product/utils/PriceSortDESC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/product/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/product/services/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/product/utils/ValidateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/product/utils/ValidateUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/product/views/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/product/views/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/product/views/PaymentView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/product/views/PaymentView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/product/views/ProductView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/product/views/ProductView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,12 +45,17 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/ThiModule2&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -90,7 +84,8 @@
       <workItem from="1677634988211" duration="336000" />
       <workItem from="1677763897800" duration="230000" />
       <workItem from="1677935894625" duration="16856000" />
-      <workItem from="1678012344526" duration="1267000" />
+      <workItem from="1678012344526" duration="8012000" />
+      <workItem from="1678084372715" duration="1177000" />
     </task>
     <servers />
   </component>
